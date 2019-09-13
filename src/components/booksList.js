@@ -9,8 +9,8 @@ export const BookList = props => {
     return books.length ? (
         <div className="bookList">
             { books.map(book => (
-                <div>
-                    <BookDetails book={book} key={book.id} />
+                <div key={book.id}>
+                    <BookDetails book={book} />
                     <br />
                 </div>
             )) }

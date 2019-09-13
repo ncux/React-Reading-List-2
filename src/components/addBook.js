@@ -4,13 +4,13 @@ import { BookContext } from "../contexts/BookContext";
 
 export const AddBookForm = props => {
 
-    const { addBook } = useContext(BookContext);
+    const { dispatch } = useContext(BookContext);
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
 
     const onFormSubmit = e => {
       e.preventDefault();
-      addBook(title, author);
+      dispatch({ type: 'ADD_BOOK', book: { title, author } });
       setTitle('');
       setAuthor('');
     };
